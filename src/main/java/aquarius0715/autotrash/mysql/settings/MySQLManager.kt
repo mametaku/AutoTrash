@@ -2,7 +2,6 @@ package aquarius0715.autotrash.mysql.settings
 
 import aquarius0715.autotrash.main.AutoTrash
 import org.bukkit.Bukkit
-import org.bukkit.plugin.java.JavaPlugin
 import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.SQLException
@@ -12,7 +11,7 @@ import java.util.logging.Level
 /**
  * Created by takatronix on 2017/03/05.
  */
-class MySQLManager(private val plugin: JavaPlugin, private val conName: String, private val mPlugin: AutoTrash) {
+class MySQLManager(private val plugin: AutoTrash, private val conName: String, private val mPlugin: AutoTrash) {
     var debugMode = false
     private var host: String? = null
     private var db: String? = null

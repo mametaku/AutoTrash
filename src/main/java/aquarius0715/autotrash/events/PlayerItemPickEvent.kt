@@ -10,7 +10,7 @@ class PlayerItemPickEvent(private val plugin: AutoTrash): Listener {
     fun onPickUp(event: PlayerPickupItemEvent) {
 
         if (!plugin.pluginStats) return
-
+        if (plugin.playerMap[event.player.uniqueId] == null)return
             if (plugin.playerMap[event.player.uniqueId]?.contains(event.item.itemStack.type)!!) {
 
                 event.item.remove()

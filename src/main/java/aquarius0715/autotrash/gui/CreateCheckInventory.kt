@@ -13,10 +13,12 @@ class CreateCheckInventory(private val plugin: AutoTrash) {
 
     fun createCheckInventory(player: Player) {
 
+        if (plugin.playerMap[player.uniqueId] == null){
+            player.openInventory(checkInv)
+            return
+        }
         for ((count, material) in plugin.playerMap[player.uniqueId]!!.withIndex()) {
-            if (material== null){
-                break
-            }
+            
             checkInv.setItem(count, ItemStack(material, 1))
 
         }
